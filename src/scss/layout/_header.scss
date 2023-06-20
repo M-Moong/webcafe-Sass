@@ -2,18 +2,19 @@
 @use "./../components" as *;
 
 .appHeader {
-  background: yellow;
   padding: rem(16px) rem(24px);
+  @include flexbox(column);
+  gap: rem(16px);
 
   @include mobile {
     background: $dark-brown;
     color: $white;
-
-    @include flexbox(column);
   }
 
   @include desktop {
     position: relative;
+
+    @include containerMax();
   }
 }
 
@@ -30,7 +31,7 @@
 
   @include desktop {
 
-    @include posCenter;
+    @include posCenterY;
   }
 }
 
@@ -59,7 +60,7 @@
 
     @include desktop {
       .formInput {
-        width: rem(460px);
+        width: rem(400px);
       }
     }
   }
