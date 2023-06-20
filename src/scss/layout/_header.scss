@@ -1,1 +1,30 @@
-// header.scss
+@use "./../utils" as *;     //$ rem 함수를 사용하기 위해 선언
+
+
+.appHeader {
+  background: yellow;
+  padding: rem(16px) rem(24px);
+
+  @include mobile {
+    background: $dark-brown;
+    color: $white;
+  }
+}
+
+//@ 로고
+.logo {
+  width: rem(240px);
+  height: rem(48px);
+  
+  &__link {
+    display: block;
+    height: 100%;
+    background: url(/assets/images/webcafe-logo.png) no-repeat;
+  }
+}
+
+//@ 멤버 서비스
+.memberOnly {
+  display: flex;
+  @include flexbox($justify: flex-end);
+}
