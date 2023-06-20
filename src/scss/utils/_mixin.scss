@@ -1,8 +1,7 @@
 @use "./../utils/unit" as *;
 
 
-//@ Position
-
+//# Position
 @mixin pos {
   position: absolute;
 }
@@ -19,16 +18,17 @@
   top: $t;
 }
 
+@mixin posCenter {
+  @include pos;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
 @mixin posCenterX {
   @include pos;
   left: 50%;
   transform: translateX(-50%);
-}
-
-@mixin posBottomY {
-  @include pos;
-  top: 100%;
-  transform: translateY(-100%);
 }
 
 @mixin posCenterY {
@@ -37,13 +37,15 @@
   transform: translateY(-50%);
 }
 
-@mixin posCenter {
+@mixin posBottomY {
   @include pos;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  top: 100%;
+  transform: translateY(-100%);
 }
 
+
+
+//# margin
 @mixin containerMax($max-width: 1024px) {
   max-width: rem($max-width);
   @include autoMargin;
@@ -52,21 +54,6 @@
 @mixin autoMargin {
   margin-left: auto;
   margin-right: auto;
-}
-
-@mixin padding($spacing) {
-  @include paddingX;
-  @include paddingY;
-}
-
-@mixin paddingY($spacing) {
-  padding-top: rem($spacing);
-  padding-bottom: rem($spacing);
-}
-
-@mixin paddingX($spacing) {
-  padding-left: rem($spacing);
-  padding-right: rem($spacing);
 }
 
 @mixin margin($spacing) {
@@ -83,3 +70,21 @@
   margin-left: rem($spacing);
   margin-right: rem($spacing);
 }
+
+
+//# padding
+@mixin padding($spacing) {
+  @include paddingX;
+  @include paddingY;
+}
+
+@mixin paddingY($spacing) {
+  padding-top: rem($spacing);
+  padding-bottom: rem($spacing);
+}
+
+@mixin paddingX($spacing) {
+  padding-left: rem($spacing);
+  padding-right: rem($spacing);
+}
+

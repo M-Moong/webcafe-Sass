@@ -37,7 +37,6 @@
 
 //@ 멤버 서비스
 .memberOnly {
-  display: flex;
   @include flexbox($justify: flex-end);
 
   @include mobile {
