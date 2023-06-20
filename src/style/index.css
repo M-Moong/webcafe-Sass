@@ -355,6 +355,29 @@ iframe {
   height: 100%;
 }
 
+/* Accessibility Styles */
+.a11yHidden,
+legend {
+  overflow: hidden;
+  position: absolute !important;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
+
+.formInput__input {
+  appearance: none;
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  border: 1px solid #767676;
+  background: #ffffff;
+  font-size: 0.875rem;
+}
+
 .appHeader {
   background: yellow;
   padding: 1rem 1.5rem;
@@ -363,6 +386,15 @@ iframe {
   .appHeader {
     background: #38302e;
     color: #ffffff;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+  }
+}
+@media (min-width: 768px) {
+  .appHeader {
+    position: relative;
   }
 }
 
@@ -375,13 +407,45 @@ iframe {
   height: 100%;
   background: url(/assets/images/webcafe-logo.png) no-repeat;
 }
+@media (min-width: 768px) {
+  .logo {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
 
 .memberOnly {
+  background: green;
   display: flex;
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-end;
   align-items: stretch;
+}
+@media (max-width: 767px) {
+  .memberOnly {
+    order: -1;
+  }
+}
+
+.searchForm__group {
+  text-align: right;
+  background: blue;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  align-items: stretch;
+}
+@media (max-width: 767px) {
+  .searchForm__group .formInput {
+    flex-grow: 1;
+  }
+}
+@media (min-width: 768px) {
+  .searchForm__group .formInput {
+    width: 28.75rem;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */
