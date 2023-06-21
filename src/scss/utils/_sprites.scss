@@ -1,5 +1,6 @@
-@use "./color" as var;
-@use "./unit" as *;
+@use "color" as var;
+@use "unit" as *;
+@use "flexbox" as *;
 
 // map 데이터
 $colors: (
@@ -23,7 +24,16 @@ $colors: (
   background-image: url(./../assets/images/sprite_main.png);
   background-repeat: no-repeat;
   padding-left: rem(64px);
+  font-size: rem(18px);
+  font-weight: 700;
+  @include flexbox(column, center);
 
+  [class*="enTitle"] {
+    font-size: rem(16px);
+    font-weight: 400;
+  }
+
+  //? Sass에서는 list 타입이라고 한다.
   $sprites: Book, Board, News, Favorite, Twitter;
   $x: 0;
   $y: 0;

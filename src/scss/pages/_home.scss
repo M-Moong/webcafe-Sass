@@ -23,6 +23,7 @@
   }
 }
 
+//@ 메인 콘텐츠 (데스크탑)
 @include desktop {
   //# 추천서적
   .book {
@@ -48,54 +49,48 @@
   .twitter {
     grid-area: twitter;
   }
+}
 
-  .appFooter {
-    margin-top: 50px;
+//# 추천서적
+.book {
+  &__cover {
+    width: 70%;
+    @include autoMargin;
+    text-align: center;
+  }
+
+  &__info {
+    @include flexbox($justify: center, $wrap: wrap);
+    column-gap: rem(8px);
+  }
+  
+  @at-root .ratingStar {
+    text-align: center;
+    width: 100%;
+    font-size: rem(36px);
   }
 }
 
-//# sprite 이미지
-// .accentBook{
-//   color:#abd375
-// }
-// .accentNews{
-//   color:#e8ca58
-// }
-// .accentBoard{
-//   color:#988574
-// }
-// .accentFavorite{
-//   color:#eea60a
-// }
-// .accentTwitter{
-//   color:#6aaee6
-// }
-// .sprite{
-//   min-height:rem(60px);
-//   padding-left:rem(64px);
-//   background-image:url(../images/sprite_main.png);
-//   background-repeat:no-repeat;
-//   font-size: rem(18px);
-//   font-weight: 700;
-//   @include flexbox(column, center);
+//# 새소식
+.news {
+  
+  @at-root .iframeWrapper {
+    @include ratio;
+  }
+}
 
-//   [class*="enTitle"] {
-//     font-size: rem(16px);
-//     font-weight: 400;
-//   }
-// }
-// .accentBook{
-//   background-position:0 0
-// }
-// .accentNews{
-//   background-position:0 -115px
-// }
-// .accentBoard{
-//   background-position:0 -230px
-// }
-// .accentFavorite{
-//   background-position:0 -345px
-// }
-// .accentTwitter{
-//   background-position:0 -460px
-// }
+//# 게시판
+.board {
+  
+}
+
+//# 인기사이트
+.favorite {
+  
+}
+
+//# 트위터
+.twitter {
+  
+}
+
