@@ -123,3 +123,10 @@
   white-space: nowrap;
   text-overflow: ellipsis;
 }
+
+
+//# 이미지 왜곡 없애는 
+@mixin fit($posX: 0, $posY: 0, $fit: cover) {
+  object-fit: $fit;
+  object-position: $posX $posY;
+}
