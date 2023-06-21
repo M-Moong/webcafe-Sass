@@ -399,7 +399,7 @@ legend {
   .button--burger {
     width: 2.25rem;
     height: 2.25rem;
-    background: blue;
+    background: transparent;
     border: 0;
     padding: 0;
     position: absolute;
@@ -508,17 +508,21 @@ legend {
 }
 
 @media (max-width: 767px) {
+  .is--active .menu__list {
+    transform: none;
+  }
   .menu__list {
     background: rgba(240, 230, 140, 0.85);
-    width: 70vw;
-    height: 100vh;
     position: fixed;
     left: 0;
     top: 0;
+    width: 70vw;
+    height: 100vh;
     padding-left: 1.25rem;
     padding-right: 1.25rem;
     padding-top: 1.25rem;
     padding-bottom: 1.25rem;
+    transform: translateX(-150%);
   }
   .menu__item {
     border-bottom: 1px solid #101010;
