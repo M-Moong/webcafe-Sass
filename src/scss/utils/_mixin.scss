@@ -14,7 +14,7 @@
 
 @mixin posRightTop($r: 0, $t: 0) {
   @include pos;
-  right: $l;
+  right: $r;
   top: $t;
 }
 
@@ -114,4 +114,12 @@
 @mixin respons($width: max-width, $height: auto) {
   #{$width}: 100%;
   height: $height;
+}
+
+
+//# 줄바꿈 ... 처리
+@mixin textOver {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }

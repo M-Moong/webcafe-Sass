@@ -73,7 +73,6 @@
 
 //# 새소식
 .news {
-  
   @at-root .iframeWrapper {
     @include ratio;
   }
@@ -81,7 +80,26 @@
 
 //# 게시판
 .board {
+  position: relative;
   
+  &__item {
+    @include flexbox;
+    column-gap: rem(8px);
+    margin-top: 15px;
+  }
+
+  &__link {
+    flex-grow: 1;
+    @include textOver;
+  }
+
+  &__date {
+    white-space: nowrap;
+  }
+
+  &__more {
+    @include posRightTop;
+  }
 }
 
 //# 인기사이트

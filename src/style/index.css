@@ -678,4 +678,30 @@ legend {
   aspect-ratio: 1.7777777778;
 }
 
+.board {
+  position: relative;
+}
+.board__item {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  column-gap: 0.5rem;
+  margin-top: 15px;
+}
+.board__link {
+  flex-grow: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.board__date {
+  white-space: nowrap;
+}
+.board__more {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
 /*# sourceMappingURL=index.css.map */
