@@ -1,1 +1,64 @@
-// home.scss
+@use "./../utils" as *;
+
+.appMain {
+  background: skyblue;
+  display: grid;
+  @include paddingX(20px);
+  @include paddingY(16px);
+  
+  
+  @include mobile {
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    row-gap: 16px;
+  }
+  
+  @include desktop {
+    @include containerMax;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto;
+    row-gap: 16px;
+    column-gap: 20px;
+    grid-template-areas: 
+    "news news news news news news news news news news news news"
+    "book book book book twitter twitter twitter twitter twitter favorite favorite favorite"
+    "book book book book . board board board board board board board";
+  }
+
+}
+
+@include desktop {
+  //# 추천서적
+  .book {
+    background: green;
+    grid-area: book;
+  }
+
+  //# 새소식
+  .news {
+    background: lightcoral;
+    grid-area: news;
+  }
+
+  //# 게시판
+  .board {
+    background: yellow;
+    grid-area: board;
+  }
+
+  //# 인기사이트
+  .favorite {
+    background: purple;
+    grid-area: favorite;
+  }
+
+  //# 트위터
+  .twitter {
+    background: red;
+    grid-area: twitter;
+  }
+
+  .appFooter {
+    margin-top: 50px;
+  }
+}
